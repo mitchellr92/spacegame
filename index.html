@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Space Game</title>
+  </head>
+  <body>
+    <h1>Space Game</h1>
+
+    <button id="rules-btn" class="btn rules-btn">How To Play</button>
+    <div id="rules" class="rules">
+      <h2>Instructions</h2>
+      <p>
+        Use the "A" key to move left and the "D" key to move right. Use the
+        space bar to fire a missile. Try to destroy as many enemy spaceships as
+        you can.
+      </p>
+      <p>
+        Try to avoid enemy spaceship missiles. If you get hit three times then
+        you will die so be careful!
+      </p>
+      <button id="close-btn" class="btn">Close</button>
+    </div>
+
+    <canvas id="canvas" width="1000" height="800"></canvas>
+
+    <script src="main.js"></script>
+  </body>
+</html>
