@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #222;
+  background-color: #23395d;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,3 +42,41 @@ canvas {
   transform: scale(0.98);
 }
 
+.rules-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.rules-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: rgba(0,0,0,0.3);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.rules-container.show {
+  display: flex;
+}
+
+.rules {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #23395d;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.rules p, .rules h2 {
+  color: #00ff41;
+}
