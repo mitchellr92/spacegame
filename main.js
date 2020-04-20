@@ -8,7 +8,7 @@ let score = 0;
 
 const ship = {
   x: canvas.width / 2,
-  y: canvas.height / 2,
+  y: canvas.height - 40,
   size: 10,
   speed: 8,
   dx: 0
@@ -28,14 +28,57 @@ function draw() {
   drawShip();
 }
 
-draw();
+// Move ship on canvas
+function moveShip() {
+  ship.x += ship.dx;
+
+  // Wall detection
+  if (ship.x + ship.size > canvas.width) {
+    ship.x = canvas.width - ship.size;
+  }
+
+  if (ship.x < 0) {
+    ship.x = 0;
+  }
+}
+
+// Keydown event
+function keyDown(e) {
+  if (e.key === "a") {
+    ship.dx = -ship.speed;
+  } else if (e.key === "d") {
+    ship.dx = ship.speed;
+  } else if (e.key === " ") {
+    console.log("space");
+  }
+}
+
+// Keyup event
+function keyUp(e) {
+  if (e.key === "a" || e.key === "d") {
+    ship.dx = 0;
+  }
+}
+
+// Update canvas drawing and animation
+function update() {
+  moveShip();
+
+  draw();
+
+  requestAnimationFrame(update);
+}
+
+update();
 
 // Event handlers
 rulesBtn.addEventListener("click", () => {
-  console.log("click");
   rules.classList.add("show");
 });
 
 closeBtn.addEventListener("click", () => {
   rules.classList.remove("show");
 });
+
+document.addEventListener("keydown", keyDown);
+document.addEventListener("keyup", keyUp);
